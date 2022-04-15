@@ -25,11 +25,11 @@ docker push victation/infnet-gitlab:latest
 ------------------------------------------------------------------------------------------------
 
 docker build -t victation/infnet-gitlab .
-#Successfully built 857815ea94f5
-#Successfully tagged victation/infnet-gitlab:latest
-#docker tag local-image:tagname new-repo:tagname
+""Successfully built 857815ea94f5
+""Successfully tagged victation/infnet-gitlab:latest
+"docker tag local-image:tagname new-repo:tagname
 docker tag victation/infnet-gitlab:latest victation/infnet-gitlab:latest
-#docker push new-repo:tagname
+"docker push new-repo:tagname
 docker push victation/infnet-gitlab:latest
 
 ------------------------------------------------------------------------------------------------
@@ -70,8 +70,8 @@ docker push victation/infnet-gitlab:1.0.x
 é uma imagem que executa o pipeline no gitlab
 gitlab/gitlab-runner:latest
 
-#is necessary to run gitlab runner in local
-#https://docs.gitlab.com/runner/install/docker.html
+is necessary to run gitlab runner in local
+https://docs.gitlab.com/runner/install/docker.html
 docker run -d --name gitlab-runner --restart always \
 -v /srv/gitlab-runner/config:/etc/gitlab-runner \
 -v /var/run/docker.sock:/var/run/docker.sock \
