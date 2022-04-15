@@ -11,6 +11,7 @@ docker build -t victation/infnet-gitlab:1.0.x .
 docker build -t victation/infnet-gitlab .
 docker container ls -la
 
+
 ------------------------------------------------------------------------------------------------
 docker build -t victation/infnet-gitlab .
 #Successfully built 857815ea94f5
@@ -83,15 +84,14 @@ docker run -d --name gitlab-runner --restart always \
 gitlab/gitlab-runner:latest
 
 
-### dentro do cotnainer gitlab-runner
+### dentro do container gitlab-runner
 docker exec -it gitlab-runner /bin/bash
 
 gitlab-runner register
 
 get the url and token
-
-
 https://gitlab.com/victorshlima/infnet-devops-project/-/settings/ci_cd
+>>runner > expand
 
 isn't necessary (BUT it's better)set DESCRIPTION , TAG
 tag insert a TAG to facilitate the runner identification#
@@ -101,11 +101,13 @@ victation/infnet-gitlab:1.0.X
 Enter a executor...
 - docker
 
-victorshlima/infnet-gitlab:1.0.2
-f5d58e4b782b
+victation/infnet-gitlab:1.0.3
+
+# wait the runner (green), if not... trey start on gitlab-runner container
+
+gitlab-runner start victation/infnet-gitlab:1.0.3
 
 
-victation/infnet-gitlab:1.0.X
 
 ## se vc atualiza a versão da imagem vc vai ter atualziar o docker runner tbm
 ------------------------------------------------------------------------------------------------
@@ -117,8 +119,47 @@ runner > expand
 disable shared runner
 
 
+#RUN
+Running the image
+
+
+4c88fd81bf43
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #melhorias
 1:19 -  configurar CACHE para o gradle video...225427
 
 
 
+sudo gitlab-runner register --url https://gitlab.com/ --registration-token $REGISTRATION_TOKEN
+
+# RUNNER GIT LAB INTALATIONS
+
+# Download the binary for your system
+sudo curl -L --output /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64
+
+# Give it permission to execute
+sudo chmod +x /usr/local/bin/gitlab-runner
+
+# Create a GitLab Runner user
+sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
+
+# Install and run as a service
+sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
+sudo gitlab-runner start
