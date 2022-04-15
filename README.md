@@ -1,27 +1,18 @@
 # image-docker-gradle-aws
 
 #Build
-## . é o local para onde vai ser a raiz da aplicação?
 #victorshlima/infnet-gitlab
 #imagem de base para a execução do pipeline no GITLAB
+#base image to pipeline GITLAB
 
-#taht way you will create the image and SET the tag at same time
+------------------------------------------------------------------------------------------------
+
 docker build -t {image:tag} .
 docker build -t victation/infnet-gitlab:1.0.x .
 docker build -t victation/infnet-gitlab .
 docker container ls -la
 
-
 ------------------------------------------------------------------------------------------------
-docker build -t victation/infnet-gitlab .
-#Successfully built 857815ea94f5
-#Successfully tagged victation/infnet-gitlab:latest
-#docker tag local-image:tagname new-repo:tagname
-docker tag victation/infnet-gitlab:latest victation/infnet-gitlab:latest
-#docker push new-repo:tagname
-docker push victation/infnet-gitlab:latest
-------------------------------------------------------------------------------------------------
-
 
 docker build -t victation/infnet-gitlab .
 #Successfully built 857815ea94f5
@@ -31,11 +22,15 @@ docker tag victation/infnet-gitlab:latest victation/infnet-gitlab:latest
 #docker push new-repo:tagname
 docker push victation/infnet-gitlab:latest
 
+------------------------------------------------------------------------------------------------
 
-
-
-
-
+docker build -t victation/infnet-gitlab .
+#Successfully built 857815ea94f5
+#Successfully tagged victation/infnet-gitlab:latest
+#docker tag local-image:tagname new-repo:tagname
+docker tag victation/infnet-gitlab:latest victation/infnet-gitlab:latest
+#docker push new-repo:tagname
+docker push victation/infnet-gitlab:latest
 
 ------------------------------------------------------------------------------------------------
 #Tag gerando a TAG e fazendo push
@@ -65,11 +60,7 @@ infnet-devops-project             infnet-gradle-aws   xxx_new_by_image   2 hours
 docker tag 6236c6a3a5f8  victation/infnet-gitlab:latest
 description "docker push new-repo:tagname"
 
-docker push victation/infnet-gitlab:1.0.3
-
-
-
-#usar o export ajuda
+docker push victation/infnet-gitlab:1.0.x
 
 - description "docker push new-repo:1.0.X
   docker push victation/infnet-gitlab:1.0.x
@@ -121,19 +112,9 @@ runner > expand
 
 disable shared runner
 
-
-
 #S3 send files
 
 aws s3 ls s3://infnet-devops-s3-bucket
-
-
-
-
-
-
-
-
 
 
 
