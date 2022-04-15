@@ -33,7 +33,7 @@ docker tag victation/infnet-gitlab:latest victation/infnet-gitlab:latest
 docker push victation/infnet-gitlab:latest
 
 ------------------------------------------------------------------------------------------------
-#Tag gerando a TAG e fazendo push
+Tag gerando a TAG e fazendo push
 ------------------------------------------------------------------------------------------------
 
 docker images
@@ -67,8 +67,8 @@ docker push victation/infnet-gitlab:1.0.x
 
 ------------------------------------------------------------------------------------------------
 #gitlab-runner
-#é uma imagem que executa o pipeline no gitlab
-#gitlab/gitlab-runner:latest
+é uma imagem que executa o pipeline no gitlab
+gitlab/gitlab-runner:latest
 
 #is necessary to run gitlab runner in local
 #https://docs.gitlab.com/runner/install/docker.html
@@ -78,7 +78,7 @@ docker run -d --name gitlab-runner --restart always \
 gitlab/gitlab-runner:latest
 
 
-### dentro do container gitlab-runner
+dentro do container gitlab-runner
 docker exec -it gitlab-runner /bin/bash
 
 gitlab-runner register
@@ -89,21 +89,23 @@ https://gitlab.com/victorshlima/infnet-devops-project/-/settings/ci_cd
 
 isn't necessary (BUT it's better)set DESCRIPTION , TAG
 tag insert a TAG to facilitate the runner identification#
-# it'hs possible had various runners and use a TAG to especify the corret runnet to use in the pipeline
-victation/infnet-gitlab:1.0.X
+
+it'hs possible had various runners and use a TAG to especify the corret runnet to use in the pipeline
+
+ victation/infnet-gitlab:1.0.X
 
 Enter a executor...
 - docker
 
 victation/infnet-gitlab:1.0.3
 
-# wait the runner (green), if not... trey start on gitlab-runner container
+wait the runner (green), if not... trey start on gitlab-runner container
 
 gitlab-runner start victation/infnet-gitlab:1.0.3
 
 
 
-## se vc atualiza a versão da imagem vc vai ter atualziar o docker runner tbm
+se vc atualiza a versão da imagem vc vai ter atualziar o docker runner tbm
 ------------------------------------------------------------------------------------------------
 acessar
 https://gitlab.com/victorshlima/infnet-devops-project/-/settings/ci_cd
@@ -125,6 +127,9 @@ aws s3 ls s3://infnet-devops-s3-bucket
 
 sudo gitlab-runner register --url https://gitlab.com/ --registration-token $REGISTRATION_TOKEN
 
+  
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 # RUNNER GIT LAB INTALATIONS
 
 # Download the binary for your system
@@ -139,3 +144,5 @@ sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/
 # Install and run as a service
 sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
 sudo gitlab-runner start
+
+------------------------------------------------------------------------------------------------
