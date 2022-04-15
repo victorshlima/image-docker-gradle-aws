@@ -33,7 +33,9 @@ docker tag victation/infnet-gitlab:latest victation/infnet-gitlab:latest
 docker push victation/infnet-gitlab:latest
 
 ------------------------------------------------------------------------------------------------
+
 Tag gerando a TAG e fazendo push
+
 ------------------------------------------------------------------------------------------------
 
 docker images
@@ -41,6 +43,7 @@ docker build -t infnet-gitlab:1.0.3 .
 docker tag local-image:tagname new-repo:tagname
 docker tag infnet-gitlab:1.0.3 victorshlima/infnet-gitlab:1.0.3
 docker push infnet-gitlab:1.0.3
+
 ------------------------------------------------------------------------------------------------
 
 #send image to docker
