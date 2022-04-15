@@ -11,4 +11,3 @@ COPY configure_aws.sh .
 RUN chmod +x configure_aws.sh
 RUN pwd
 RUN ls
-RUN /bin/bash

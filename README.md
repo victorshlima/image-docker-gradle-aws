@@ -34,6 +34,9 @@ docker push victation/infnet-gitlab:latest
 
 
 
+
+
+
 ------------------------------------------------------------------------------------------------
 #Tag gerando a TAG e fazendo push
 ------------------------------------------------------------------------------------------------
@@ -119,18 +122,10 @@ runner > expand
 disable shared runner
 
 
-#RUN
-Running the image
 
+#S3 send files
 
-4c88fd81bf43
-
-
-
-
-
-
-
+aws s3 ls s3://infnet-devops-s3-bucket
 
 
 
